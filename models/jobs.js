@@ -22,7 +22,7 @@ const JobsSchema = mongoose.Schema({
         type: String,
         enum: ['Pending','Rejected','In Progress']
     },
-    user: {
+    userName: {
         type: String
     }
 });
@@ -64,11 +64,11 @@ module.exports.addJob = function(newJob, callback){
 }
 
 
-//Returns a user document if the player exist, Queries database by email
-//*Note: will need validation checking to make sure similiar email dont exist
-module.exports.checkEmail = function(email, callback){
+//Returns a user document if the player exist, Queries database by username
+//*Note: will need validation checking to make sure similiar usernames dont exist
+module.exports.checkUsername = function(username, callback){
     
-    User.getUserByEmail(email,callback)
+    User.getUserByUsername(username,callback)
         
     
 }
