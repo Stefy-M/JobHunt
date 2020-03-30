@@ -44,14 +44,19 @@ router.get('/add/:userName', (req,res,next)=>{
         if(userDocument){
 
             userObject = userDocument
+
+            //We are adding a job to database and pushing job to users jobList array
             Job.addJob(job, (err,usr)=>{
                 if(err){
                     res.json({success:false, msg: 'Failed to add job'})
                     
                 }
                 else{
+                    
+                    userObject.jobsList.push(job)
+                    userObject.save()
                     res.json({success:true, msg: 'Job added',userObject})
-                    //console.log(usr)
+                    
                 }
             })
         }
