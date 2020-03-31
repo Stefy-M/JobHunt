@@ -29,26 +29,17 @@ const JobsSchema = mongoose.Schema({
 
 const Jobs = module.exports = mongoose.model('Jobs',JobsSchema);
 
-module.exports.getUserById = function(id, callback){
+module.exports.getJobById = function(id, callback){
 
     Jobs.findById(id,callback)
 }
 
 //This function checks if the job is already in the database based the company and job title you entered
 //Enables you to apply to one company but different positions
-module.exports.exist = function (companyName, jTitle){
+module.exports.getJob = function (companyName, jTitle, callback){
 
     var query = {company: companyName, jobTitle:jTitle}
-    Jobs.findOne(query, (err,res)=>{
-        if(err){
-            return false;
-        }
-
-        console.log(res);
-        return true;
-
-    });
-
+    Jobs.findOne(query, callback)
 }
 
 module.exports.addJob = function(newJob, callback){
