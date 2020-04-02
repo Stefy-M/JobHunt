@@ -74,6 +74,7 @@ router.post('/authenticate', (req,res,next) =>{
 
 router.get('/profile', passport.authenticate('jwt',{session:false}),(req,res,next) =>{
 
+    
     res.json({user:req.user})
 })
 

@@ -22,7 +22,8 @@ app.use(cors());
 //Body parser
 app.use(bodyParser.json());
 
-//Passport Middleware
+// Initialize Passport and restore authentication state, if any, from the
+// session.
 app.use(passport.initialize());
 app.use(passport.session());
 
