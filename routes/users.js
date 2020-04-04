@@ -8,7 +8,7 @@ const User = require('../models/users')
 
 
 //Register 
-router.get('/register', (req,res,next)=>{
+router.post('/register', (req,res,next)=>{
     var newuser = new User({
         name: req.body.name,
         email: req.body.email,
@@ -54,6 +54,7 @@ router.post('/authenticate', (req,res,next) =>{
 
                 res.json({
                     success: true,
+                    msg: 'Login/Authentication Successful',
                     token: 'JWT ' + token,
                     user: {
                         id: user._id,

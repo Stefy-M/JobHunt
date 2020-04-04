@@ -14,7 +14,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "popper.js": "^1.16.1"
   },
   "author": "Stefon Martin",
   "license": "ISC"
