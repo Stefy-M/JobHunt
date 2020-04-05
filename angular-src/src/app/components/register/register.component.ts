@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   jobsList: Array<Object>;
 
 
-  constructor(private validateService:ValidateService,
+  constructor(private validateService: ValidateService,
               private flashMessage: FlashMessagesService,
               private authService: AuthService,
               private router: Router) { }
@@ -38,14 +38,14 @@ export class RegisterComponent implements OnInit {
       numOfJobs: 0
     }
 
-    if(!this.validateService.validateRegister(user)){
-      
+    if (!this.validateService.validateRegister(user)) {
+
       this.flashMessage.show('Please Fill in all field', {cssClass: 'alert-danger', timeout: 3000});
-      
+
       return false;
     }
 
-    if(!this.validateService.validateEmail(user.email)){
+    if (!this.validateService.validateEmail(user.email)) {
       this.flashMessage.show('Please use a valid Email', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
@@ -61,7 +61,6 @@ export class RegisterComponent implements OnInit {
       }
     });
 
-    
 
     
   }

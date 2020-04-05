@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
       if(data.success){
         
         this.router.navigate(['/profile']);
+        this.authService.storeUserData(data.token,data.user);
         this.flashMessage.show(data.msg.toString(),{cssClass: 'alert-success', timeout: 3000} )
+      
 
       }
       else{
