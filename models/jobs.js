@@ -42,6 +42,8 @@ module.exports.getJob = function (companyName, jTitle, callback){
     Jobs.findOne(query, callback)
 }
 
+
+
 module.exports.addJob = function(newJob, callback){
 
     //Check if job allready exist 

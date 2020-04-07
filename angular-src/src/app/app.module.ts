@@ -14,6 +14,7 @@ import {ValidateService} from './services/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import {NglModule} from 'ng-lightning';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    NglModule
     
   ],
   providers: [ValidateService, AuthService, AuthGuard],

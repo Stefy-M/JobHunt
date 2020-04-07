@@ -1,1 +1,13 @@
-<p>company-list works!</p>
+<div ngIf = "this.jobs">
+    <ul ngl-accordion [(activeName)]="this.jobs.company">
+        <ng-container *ngFor="let section of sections">
+          <ng-template nglAccordionSection [name]="section.name" [label]="header" [labelContext]="section.header">{{ section.content }}</ng-template>
+        </ng-container>
+      </ul>
+      <ng-template #header let-data>
+        <div class="slds-grid slds-grid_vertical-align-center slds-m-left_small">
+          <ngl-icon class="slds-m-right_x-small" [iconName]="data.icon" size="small"></ngl-icon>
+          <strong>{{ data.label }}</strong>
+        </div>
+      </ng-template>
+</div>

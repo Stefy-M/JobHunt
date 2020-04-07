@@ -72,6 +72,18 @@ export class AuthService {
     }
     return !jwtHelper.isTokenExpired(localStorage.getItem('Token'));
   }
+
+  // This method gets all jobs that are attached to the user object is stored in localStorage after authenication was succesful
+  // in profile.component.ts 
+  getJobs(){
+    if(localStorage.getItem('User') != null ||localStorage.getItem('User') != undefined ){
+      return JSON.parse(localStorage.getItem('User')).jobsList;
+    }
+
+    else{
+      return null;
+    }
+  }
 }
 
 
