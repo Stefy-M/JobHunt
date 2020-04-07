@@ -15,6 +15,7 @@ http://ng-lightning.github.io/ng-lightning/#/components/accordion
 export class CompanyListComponent implements OnInit {
 
   jobs: any;
+  active = 'B';
 
   constructor(private authservice: AuthService,
               private flashMessage: FlashMessagesService) { }

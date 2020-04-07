@@ -18,8 +18,13 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@salesforce-ux/design-system/assets/",
+                "output": "/assets"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -43,7 +48,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -122,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-src"
+    }
+  },
+  "defaultProject": "angular-src",
+  "cli": {
+    "analytics": "8678a534-d14a-4a33-86cb-05b01ac00959"
+  }
 }
