@@ -16,7 +16,9 @@
     "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "primeicons": "^2.0.0",
+    "primeng": "^9.0.5"
   },
   "author": "Stefon Martin",
   "license": "ISC"

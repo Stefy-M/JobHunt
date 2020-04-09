@@ -14,7 +14,12 @@ import {ValidateService} from './services/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
-import {NglModule} from 'ng-lightning';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';  
+import {TableModule} from 'primeng/table';                //api
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -37,11 +42,17 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
-    NglModule
+    AccordionModule,
+    BrowserAnimationsModule,
+    TableModule,
+    ButtonModule,
+    DialogModule
+    
     
   ],
   providers: [ValidateService, AuthService, AuthGuard],

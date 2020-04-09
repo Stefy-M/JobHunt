@@ -16,10 +16,10 @@
           <a [routerLink] = "['/profile']" class="nav-link" href="#">Profile</a>
         </li>
         <li  *ngIf = "this.authService.loggedIn()" class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact:true}">
-            <a [routerLink] = "['/company-list']" class="nav-link" href="#">Company List</a>
-        </li>
+          <a [routerLink] = "['/company-add']" class="nav-link" href="#">Company Add</a>
+      </li>
         <li  *ngIf = "this.authService.loggedIn()" class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact:true}">
-            <a [routerLink] = "['/company-add']" class="nav-link" href="#">Company Add</a>
+            <a [routerLink] = "['/company-list']" class="nav-link" href="#">Company List</a>
         </li>
       </ul>
 

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {TableModule} from 'primeng/table';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-company-list',
@@ -8,26 +10,43 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./company-list.component.css']
 })
 
-/*
-Planning to use Accordion sections to show list of jobs
-http://ng-lightning.github.io/ng-lightning/#/components/accordion
- */
-export class CompanyListComponent implements OnInit {
 
+export class CompanyListComponent implements OnInit, OnDestroy {
+  
+  selectedJob :any;
+  displayDialog : boolean;
   jobs: any;
-  active = 'B';
+  
+  
 
   constructor(private authservice: AuthService,
               private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
+    
 
     if( this.jobs = this.authservice.getJobs()){
       console.log(this.jobs);
     } else {
       this.flashMessage.show('Company List is not Loading Properly',{cssClass: 'alert-danger', timeout: 6000})
     }
+
+    
+
+    
+  
     
   }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    
+  }
+
+  showDialogToAdd(){
+    this.flashMessage.show('Add button pressed!',{cssClass: 'alert-success', timeout: 1000});
+    this.displayDialog = true;
+  }
+
 
 }

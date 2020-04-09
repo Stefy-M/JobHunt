@@ -1,12 +1,63 @@
-<div *ngIf = "this.jobs">
-    <ul ngl-accordion [(activeName)]="this.jobs.company">
-        <ng-container *ngFor="let job of jobs">
-          <ng-template nglAccordionSection [name]="jobs.company" [label]="jobs.company" [labelContext]="jobs.company">{{ job.jobTitle }}</ng-template>
-        </ng-container>
-      </ul>
-      <ng-template #header let-data>
-        <div class="slds-grid slds-grid_vertical-align-center">
-          <strong>{{jobs.company}}</strong>
-        </div>
-      </ng-template>
+<div style="margin-top: 50px;">
+<p-table [value] = "this.jobs" selectionMode ="single" [(selection)] ="selectedJob" pagination ="true" [rows] = 5>
+  <ng-template pTemplate ="caption">
+    List of Jobs
+  </ng-template>
+  <ng-template pTemplate ="header">
+    <tr>
+      <th>Company<p-sortIcon></p-sortIcon></th>
+      <th>Job Title<p-sortIcon></p-sortIcon></th>
+      <th>Location<p-sortIcon></p-sortIcon></th>
+      <th>Notes<p-sortIcon></p-sortIcon></th>
+  </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-job>
+    <tr [pSelectableRow]="job">
+      <td>{{job.company}}</td>
+      <td>{{job.jobTitle}}</td>
+      <td>{{job.location}}</td>
+      <td>{{job.notes}}</td>
+    </tr>
+</ng-template>
+<ng-template pTemplate="summary" let-job>
+  <div style="text-align:left">
+      <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()" label="Add"></button>
+  </div>
+</ng-template>    
+</p-table>
 </div>
+
+
+  <p-dialog header ="Job Details" [(visible)] = "displayDialog" [focusOnShow] = "false" [responsive] = "true"showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+    
+    
+
+  </p-dialog>
+
+
+
+
+
+
+
+
+<!-- <h3 class="first">Basic</h3> 
+<p-table [value]="jobs">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Company</th>
+            <th>Job Title</th>
+            <th>Location</th>
+            <th>Notes</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-job>
+        <tr>
+            <td>{{job.company}}</td>
+            <td>{{job.jobTitle}}</td>
+            <td>{{job.location}}</td>
+            <td>{{job.notes}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+-->
