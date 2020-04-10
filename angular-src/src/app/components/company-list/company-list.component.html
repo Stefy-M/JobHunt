@@ -1,5 +1,5 @@
 <div style="margin-top: 50px;">
-<p-table [value] = "this.jobs" selectionMode ="single" [(selection)] ="selectedJob" pagination ="true" [rows] = 5>
+<p-table [value] = "this.jobs" (onRowSelect) ="onRowSelect($event)" selectionMode ="single" [(selection)] ="selectedJob" pagination ="true" [rows] = 5>
   <ng-template pTemplate ="caption">
     List of Jobs
   </ng-template>
@@ -28,8 +28,48 @@
 </div>
 
 
-  <p-dialog header ="Job Details" [(visible)] = "displayDialog" [focusOnShow] = "false" [responsive] = "true"showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
-    
+  <p-dialog header ="Job Details"  [(visible)] = "displayDialog" [focusOnShow] = "false" [responsive] = "true"showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+    <div class="ui-g ui-fluid" *ngIf="jobDetail">
+      <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="company">Company</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="company" [(ngModel)]="jobDetail.company" autofocus />
+            </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="company">Job Title</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="jobTitle" [(ngModel)]="jobDetail.jobTitle" autofocus />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="company">Location</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="location" [(ngModel)]="jobDetail.location" autofocus />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="company">Notes</label>
+          </div>
+          <div class="ui-g-8">
+              <textarea pInputTextarea id="notes" [(ngModel)]="jobDetail.notes" autofocus ></textarea>
+          </div>
+      </div>
+
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+          <button type="button" pButton icon="pi pi-times" (click)="delete()" label="Delete"></button>
+          <button type="button" pButton icon="pi pi-check" (click)="save()" label="Save"></button>
+      </div>
+    </p-footer>
     
 
   </p-dialog>

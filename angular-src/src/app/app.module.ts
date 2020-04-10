@@ -20,6 +20,7 @@ import {TableModule} from 'primeng/table';                //api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     TableModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    InputTextareaModule
     
     
   ],

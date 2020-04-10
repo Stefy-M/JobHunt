@@ -7,6 +7,26 @@ const config = require ('../config/database')
 const User = require('../models/users')
 
 
+
+router.get('/getuser/:userName', (req,res,next)=>{
+
+    const userName = req.params.userName
+
+    User.getUserByUsername(userName, (err,user)=>{
+
+        if(err){ throw err}
+
+        if(user){
+            res.json({success:true,user, msg: 'User found'})
+        }
+        else{
+            res.json({success:true,user, msg: 'User not found'})
+        }
+
+
+    })
+
+})
 //Register 
 router.post('/register', (req,res,next)=>{
     var newuser = new User({
