@@ -12,7 +12,7 @@ export class JobService {
   deleteJob(companyName, jobTitle){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.delete('http://localhost:3000/jobs/delete/'+companyName+'&'+jobTitle, {
+    return this.http.delete('jobs/delete/'+companyName+'&'+jobTitle, {
       headers: headers,
       observe: 'response'
     }).pipe(map((res: HttpResponse<JSON>) => res));
@@ -24,7 +24,7 @@ export class JobService {
     const userName = JSON.parse(localStorage.getItem('User')).username;
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.put('http://localhost:3000/jobs/update/'+userName,newJob, {
+    return this.http.put('jobs/update/'+userName,newJob, {
       headers: headers,
       observe: 'response'
     }).pipe(map((res: HttpResponse<JSON>) => res));
@@ -35,7 +35,7 @@ export class JobService {
     const userName = JSON.parse(localStorage.getItem('User')).username;
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/jobs/add/'+userName,jobObject, {
+    return this.http.post('jobs/add/'+userName,jobObject, {
       headers: headers,
       observe: 'response'
     }).pipe(map((res: HttpResponse<JSON>) => res));
