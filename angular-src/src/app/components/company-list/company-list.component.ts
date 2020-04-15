@@ -26,7 +26,7 @@ export class CompanyListComponent implements OnInit{
 
   ngOnInit() {
     if( this.jobs = this.authservice.getJobs() ){
-      console.log(this.jobs);
+      this.updateUser()
     } else {
       this.flashMessage.show('Company List is not Loading Properly',{cssClass: 'alert-danger', timeout: 6000})
     }
@@ -53,7 +53,6 @@ export class CompanyListComponent implements OnInit{
   }
 
   onRowSelect(event){
-    console.log(this.jobs.indexOf(this.selectedJob))
     this.jobDetail = event.data
     this.displayDialog = true;
     this.updateUser();
@@ -74,8 +73,6 @@ export class CompanyListComponent implements OnInit{
     
   }
   delete(){
-    
-    //let index = this.jobs.indexOf(this.selectedJob)
     const companyName = this.selectedJob.company
     const jobTitle = this.selectedJob.jobTitle
     this.jobService.deleteJob(companyName,jobTitle).subscribe();

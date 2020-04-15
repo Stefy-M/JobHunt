@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {JobService} from '../../services/job.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {ValidateService} from '../../services/validate.service';
+import { SelectItem } from 'primeng/api/selectitem';
 
 
 
@@ -17,13 +18,14 @@ export class CompanyAddComponent implements OnInit {
   location:String
   notes:String
   link:String
-  status:String
+  selectedStatus: String = 'Pending';
 
   constructor(private jobService:JobService, 
               private flashMessage:FlashMessagesService,
               private validateService: ValidateService) { }
 
   ngOnInit() {
+  
   }
 
   onJobSubmit(){
@@ -33,7 +35,7 @@ export class CompanyAddComponent implements OnInit {
       location: this.location,
       notes: this.notes,
       link: this.link,
-      status: this.status
+      status: this.selectedStatus
 
     }
     if (!this.validateService.validateJob(job)) {

@@ -46,8 +46,10 @@ module.exports.delete = function (companyName, jobtitle, callback){
     var query = {company: companyName, jobTitle:jobtitle}
     Jobs.findOne(query, (err,doc) =>{
         if(err) { throw err}
-        
-        //Delete from users jobList aswell
+
+        console.log(doc)
+
+        if(doc){
         const username = doc.userName
         User.update({username:username},{"$pull":{"jobsList":query}},{safe:true},function(errr,del){
             if(errr) throw errr
@@ -60,6 +62,10 @@ module.exports.delete = function (companyName, jobtitle, callback){
 
 
         doc.remove(callback)
+        }
+        else{
+            callback(null)
+        }
     })
 }
 
@@ -82,14 +88,13 @@ module.exports.updateJob = function(editedJob, callback){
         doc.link = link
         doc.status = status
 
-        //Delete from users jobList aswell
         const username = doc.userName
-        User.update({username:username},{"$set":{"jobsList":doc}},{safe:true},function(errr,save){
+        User.update({username:username, "jobsList.company": doc.company},{"$set":{"jobsList[doc.company]":doc}},{safe:true},function(errr,save){
             if(errr) throw errr
             console.log(save)
-            User.findOne({username:username}, (err,doc)=>{
-                doc.numOfJobs = doc.jobsList.length
-                doc.save()
+            User.findOne({username:username}, (err,userDoc)=>{
+                userDoc.numOfJobs = userDoc.jobsList.length
+                userDoc.save()
             })
         })
 

@@ -9,6 +9,8 @@
       <th>Job Title</th>
       <th>Location</th>
       <th>Notes</th>
+      <th>Status</th>
+      <th>Link</th>
   </tr>
   </ng-template>
   <ng-template pTemplate="body" let-job>
@@ -17,6 +19,8 @@
       <td>{{job.jobTitle}}</td>
       <td>{{job.location}}</td>
       <td>{{job.notes}}</td>
+      <td>{{job.status}}</td>
+      <td>{{job.link}}</td>
     </tr>
 </ng-template>
 <ng-template pTemplate="summary" let-job>
@@ -28,7 +32,7 @@
 </div>
 
 
-  <p-dialog header ="Job Details"  [(visible)] = "displayDialog" [focusOnShow] = "false" [responsive] = "true"showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+  <p-dialog  header ="Job Details"  [(visible)] = "displayDialog" [focusOnShow] = "false" [responsive] = "true"showEffect="fade" [modal]="true"  [style]="{width: '400px'}">
     <div class="ui-g ui-fluid" *ngIf="jobDetail">
       <div class="ui-g-12">
             <div class="ui-g-4">
@@ -61,7 +65,25 @@
           <div class="ui-g-8">
               <textarea pInputTextarea id="notes" [(ngModel)]="jobDetail.notes" autofocus ></textarea>
           </div>
-      </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="company">Link</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="link" [(ngModel)]="jobDetail.link" autofocus />
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="company">Status</label>
+          </div>
+          <div class="ui-g-8">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Pending" label="Pending" [(ngModel)]="jobDetail.status" inputId="opt1"></p-radioButton></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Rejected" label="Rejected" [(ngModel)]="jobDetail.status" inputId="opt2"></p-radioButton></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="In Progress" label="In Progress" [(ngModel)]="jobDetail.status" inputId="opt3"></p-radioButton></div>
+          </div>
+        </div>
 
     </div>
     <p-footer>
