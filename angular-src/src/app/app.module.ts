@@ -13,6 +13,7 @@ import {HttpClientModule, HttpHeaders} from '@angular/common/http';
 import {ValidateService} from './services/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
+import {JobService} from './services/job.service';
 import {AuthGuard} from './guards/auth.guard';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';  
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard,JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

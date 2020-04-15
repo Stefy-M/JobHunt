@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {JobService} from '../../services/job.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {TableModule} from 'primeng/table';
-import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-company-list',
@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
 })
 
 
-export class CompanyListComponent implements OnInit, OnDestroy {
+export class CompanyListComponent implements OnInit{
   
   jobDetail : any;
   selectedJob :any;
@@ -21,50 +21,66 @@ export class CompanyListComponent implements OnInit, OnDestroy {
   
 
   constructor(private authservice: AuthService,
-              private flashMessage: FlashMessagesService) { }
+              private flashMessage: FlashMessagesService,
+              private jobService: JobService) { }
 
   ngOnInit() {
-    
-
     if( this.jobs = this.authservice.getJobs() ){
       console.log(this.jobs);
     } else {
       this.flashMessage.show('Company List is not Loading Properly',{cssClass: 'alert-danger', timeout: 6000})
     }
-
-    
-
-    
-  
-    
   }
 
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    
+  //Used to update user object everytime an event happens so data shown can be accurate
+  updateUser(){
+    this.authservice.getUser(JSON.parse(localStorage.getItem('User')).username).subscribe(res =>{
+      let obj = {} as any;
+      let user = {} as any
+      obj = res.body
+      user = obj.user
+      user.numOfJobs = user.jobsList.length
+      localStorage.setItem('User', JSON.stringify(user));
+      this.jobs = user.jobsList
+    })
   }
 
-  showDialogToAdd(){
+  refresh(){
+    
     this.jobDetail = {}
-    this.flashMessage.show('Add button pressed!',{cssClass: 'alert-success', timeout: 1000});
-    this.displayDialog = true;
+    this.flashMessage.show('Table refreshed!',{cssClass: 'alert-success', timeout: 1000});
+    this.updateUser();
   }
 
   onRowSelect(event){
-    console.log(event.data)
+    console.log(this.jobs.indexOf(this.selectedJob))
     this.jobDetail = event.data
     this.displayDialog = true;
+    this.updateUser();
     
   }
+
+
+  
 
 
   save(){
-
+    const newJob = this.selectedJob
+    this.jobService.updateJob(newJob).subscribe()
+    this.displayDialog = false;
+    this.updateUser();
     
 
+    
   }
   delete(){
-
+    
+    //let index = this.jobs.indexOf(this.selectedJob)
+    const companyName = this.selectedJob.company
+    const jobTitle = this.selectedJob.jobTitle
+    this.jobService.deleteJob(companyName,jobTitle).subscribe();
+    this.displayDialog = false;
+    this.updateUser();
   }
 
 

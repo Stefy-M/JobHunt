@@ -18,7 +18,7 @@ userName*/
     this function first checks if the user exist then adds the job to database.
 
 */
-router.get('/add/:userName', (req,res,next)=>{
+router.post('/add/:userName', (req,res,next)=>{
 
     var userObject = {}
     const job = new Job({
@@ -77,6 +77,53 @@ router.get('/find',(req,res,next) =>{
             res.json({success:false, msg:'Could not find job object'})
         }
 
+    });
+})
+
+router.delete('/delete/:company&:jobTitle',(req,res,next)=>{
+
+    const company = req.params.company
+    const jobTitle = req.params.jobTitle
+
+    Job.delete(company, jobTitle, (err, doc)=>{
+        if (err) throw err
+        if(doc){
+            res.json({success:true, doc:doc,msg:'First Occurrence of the document is removed'})
+
+        }
+        else{
+            res.json({success:false, msg:'Could not find job object to remove'})
+        }
+
+        
+    })
+})
+
+router.put('/update/:userName', (req,res,next)=>{
+    
+    
+    const editedJob = new Job({
+        company: req.body.company,
+        jobTitle: req.body.jobTitle,
+        location: req.body.location,
+        notes: req.body.notes,
+        link: req.body.link,
+        status: req.body.status,
+        userName: req.params.userName
+
+    });
+    
+
+    Job.updateJob(editedJob, (err,saved)=>{
+        if(err) throw err
+        if(saved){
+            res.json({success:true, doc:saved,msg:'Job has been updated'})
+
+        }
+        else{
+            res.json({success:false, msg:'Update failed'})
+        }
+        
     });
 })
 

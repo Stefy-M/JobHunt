@@ -40,6 +40,16 @@ export class AuthService {
 
   }
 
+  getUser(userName){
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/users/getuser/'+userName, {
+      headers: headers,
+      observe: 'response'
+    }).pipe(map((res: HttpResponse<JSON>) => res));
+  }
+
+
   loadToken() {
     const token = localStorage.getItem('Token');
     this.authToken = token;

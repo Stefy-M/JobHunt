@@ -35,7 +35,6 @@ router.post('/register', (req,res,next)=>{
         username: req.body.username,
         password: req.body.password,
         numOfJobs: req.body.numOfJobs
-
     })
 
     User.addUser(newuser, (err, usr) =>{
@@ -85,7 +84,6 @@ router.post('/authenticate', (req,res,next) =>{
                 })
             }
             else{
-
                 return res.json({success: false, msg: 'Wrong password'})
             }
         })

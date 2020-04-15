@@ -1,1 +1,30 @@
-<p>company-add works!</p>
+
+<h1 class="page-header display-1" style="text-align: center;">Add a new job</h1>
+<form name = "myForm" (submit) = "onJobSubmit()">
+    <div class="form-group">
+      <label>Company</label>
+      <input [(ngModel)] ="company" type="text" class="form-control"  name="company">
+    </div>
+    <div class="form-group">
+        <label >Job Title</label>
+        <input [(ngModel)] = "jobTitle" type="text" class="form-control" name ="jobTitle">
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input [(ngModel)] ="location" type="text" class="form-control"  name="location">
+    </div>
+    <div class="form-group">
+      <label>Company Notes</label>
+      <textarea id="notes" name ="notes" [(ngModel)]="notes" class="form-control" ></textarea>
+    </div>
+    <div class="form-group">
+        <label>Link</label>
+        <input [(ngModel)] ="link" type="text" class="form-control"  name="link">
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <input [(ngModel)] ="status" type="text" class="form-control"  name="status">
+    </div>
+    <button pButton icon="pi pi-plus" type="submit" class="btn btn-primary" label= "Add"></button>
+    
+  </form>

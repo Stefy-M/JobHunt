@@ -42,6 +42,65 @@ module.exports.getJob = function (companyName, jTitle, callback){
     Jobs.findOne(query, callback)
 }
 
+module.exports.delete = function (companyName, jobtitle, callback){
+    var query = {company: companyName, jobTitle:jobtitle}
+    Jobs.findOne(query, (err,doc) =>{
+        if(err) { throw err}
+        
+        //Delete from users jobList aswell
+        const username = doc.userName
+        User.update({username:username},{"$pull":{"jobsList":query}},{safe:true},function(errr,del){
+            if(errr) throw errr
+            console.log(del)
+            User.findOne({username:username}, (err,doc)=>{
+                doc.numOfJobs = doc.jobsList.length
+                doc.save()
+            })
+        })
+
+
+        doc.remove(callback)
+    })
+}
+
+module.exports.updateJob = function(editedJob, callback){
+    var company = editedJob.company
+    var jobTitle= editedJob.jobTitle
+    var location = editedJob.location
+    var notes = editedJob.notes
+    var link = editedJob.link
+    var status = editedJob.status
+    var query = {company: company, jobTitle:jobTitle}
+
+    Jobs.findOne(query, (err,doc)=>{
+        if(err) throw err
+        
+        doc.company = company
+        doc.jobTitle = jobTitle
+        doc.location = location
+        doc.notes = notes
+        doc.link = link
+        doc.status = status
+
+        //Delete from users jobList aswell
+        const username = doc.userName
+        User.update({username:username},{"$set":{"jobsList":doc}},{safe:true},function(errr,save){
+            if(errr) throw errr
+            console.log(save)
+            User.findOne({username:username}, (err,doc)=>{
+                doc.numOfJobs = doc.jobsList.length
+                doc.save()
+            })
+        })
+
+
+
+
+        doc.save(callback)
+
+    })
+}
+
 
 
 module.exports.addJob = function(newJob, callback){

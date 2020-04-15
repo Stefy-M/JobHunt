@@ -5,10 +5,10 @@
   </ng-template>
   <ng-template pTemplate ="header">
     <tr>
-      <th>Company<p-sortIcon></p-sortIcon></th>
-      <th>Job Title<p-sortIcon></p-sortIcon></th>
-      <th>Location<p-sortIcon></p-sortIcon></th>
-      <th>Notes<p-sortIcon></p-sortIcon></th>
+      <th>Company</th>
+      <th>Job Title</th>
+      <th>Location</th>
+      <th>Notes</th>
   </tr>
   </ng-template>
   <ng-template pTemplate="body" let-job>
@@ -21,7 +21,7 @@
 </ng-template>
 <ng-template pTemplate="summary" let-job>
   <div style="text-align:left">
-      <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()" label="Add"></button>
+      <button type="button" pButton icon="pi pi-refresh" (click)="refresh()" label="Refresh"></button>
   </div>
 </ng-template>    
 </p-table>
@@ -35,7 +35,7 @@
                 <label for="company">Company</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="company" [(ngModel)]="jobDetail.company" autofocus />
+                <input pInputText id="company" [(ngModel)]="jobDetail.company" autofocus disabled/>
             </div>
         </div>
         <div class="ui-g-12">
@@ -43,7 +43,7 @@
               <label for="company">Job Title</label>
           </div>
           <div class="ui-g-8">
-              <input pInputText id="jobTitle" [(ngModel)]="jobDetail.jobTitle" autofocus />
+              <input pInputText id="jobTitle" [(ngModel)]="jobDetail.jobTitle" autofocus disabled />
           </div>
         </div>
         <div class="ui-g-12">
