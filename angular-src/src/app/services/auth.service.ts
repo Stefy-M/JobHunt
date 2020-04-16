@@ -15,7 +15,7 @@ export class AuthService {
   registerUser(user) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/register', user, {
+    return this.http.post('users/register', user, {
       headers: headers,
       observe: 'response'
     }).pipe(map((res: HttpResponse<JSON>) => res));
@@ -25,7 +25,7 @@ export class AuthService {
   authenticateUser(user){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, {
+    return this.http.post('users/authenticate', user, {
       headers: headers,
       observe: 'response'
     }).pipe(map((res: HttpResponse<JSON>) => res));
