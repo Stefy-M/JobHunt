@@ -34,6 +34,8 @@ require('./config/passport')(passport)
 app.use('/users',users);
 app.use('/jobs',jobs);
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.listen(port, ()=>{
     console.log('Server started on port '+ port);
 })
@@ -43,4 +45,8 @@ app.listen(port, ()=>{
 app.get('/', (req,res)=>{
 
     res.send("Hello");
+})
+
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 })
