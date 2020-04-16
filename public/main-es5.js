@@ -2577,7 +2577,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function registerUser(user) {
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]();
           headers.append('Content-Type', 'application/json');
-          return this.http.post('http://localhost:3000/users/register', user, {
+          return this.http.post('users/register', user, {
             headers: headers,
             observe: 'response'
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
@@ -2589,7 +2589,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function authenticateUser(user) {
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]();
           headers.append('Content-Type', 'application/json');
-          return this.http.post('http://localhost:3000/users/authenticate', user, {
+          return this.http.post('users/authenticate', user, {
             headers: headers,
             observe: 'response'
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
