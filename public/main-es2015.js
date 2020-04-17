@@ -417,16 +417,10 @@ function CompanyListComponent_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Job Title");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Location");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Notes");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Notes");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Status");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Link");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
@@ -444,12 +438,6 @@ function CompanyListComponent_ng_template_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const job_r14 = ctx.$implicit;
@@ -459,13 +447,9 @@ function CompanyListComponent_ng_template_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.jobTitle);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.location);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.notes);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.status);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.link);
 } }
 function CompanyListComponent_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -582,7 +566,6 @@ function CompanyListComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r13.jobDetail.status);
 } }
-const _c0 = function () { return { width: "400px" }; };
 class CompanyListComponent {
     constructor(authservice, flashMessage, jobService) {
         this.authservice = authservice;
@@ -634,13 +617,13 @@ class CompanyListComponent {
     }
 }
 CompanyListComponent.ɵfac = function CompanyListComponent_Factory(t) { return new (t || CompanyListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_job_service__WEBPACK_IMPORTED_MODULE_3__["JobService"])); };
-CompanyListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CompanyListComponent, selectors: [["app-company-list"]], decls: 12, vars: 11, consts: [[2, "margin-top", "50px"], ["selectionMode", "single", "pagination", "true", 3, "value", "selection", "rows", "onRowSelect", "selectionChange"], ["pTemplate", "caption"], ["pTemplate", "header"], ["pTemplate", "body"], ["pTemplate", "summary"], ["header", "Job Details", "showEffect", "fade", 3, "visible", "focusOnShow", "responsive", "modal", "visibleChange"], ["class", "ui-g ui-fluid", 4, "ngIf"], [1, "ui-dialog-buttonpane", "ui-helper-clearfix"], ["type", "button", "pButton", "", "icon", "pi pi-times", "label", "Delete", 3, "click"], ["type", "button", "pButton", "", "icon", "pi pi-check", "label", "Save", 3, "click"], [3, "pSelectableRow"], [2, "text-align", "left"], ["type", "button", "pButton", "", "icon", "pi pi-refresh", "label", "Refresh", 3, "click"], [1, "ui-g", "ui-fluid"], [1, "ui-g-12"], [1, "ui-g-4"], ["for", "company"], [1, "ui-g-8"], ["pInputText", "", "id", "company", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "jobTitle", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "location", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputTextarea", "", "id", "notes", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "link", "autofocus", "", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Pending", "label", "Pending", "inputId", "opt1", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Rejected", "label", "Rejected", "inputId", "opt2", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "In Progress", "label", "In Progress", "inputId", "opt3", 3, "ngModel", "ngModelChange"]], template: function CompanyListComponent_Template(rf, ctx) { if (rf & 1) {
+CompanyListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CompanyListComponent, selectors: [["app-company-list"]], decls: 12, vars: 9, consts: [[2, "margin-top", "50px"], ["selectionMode", "single", "pagination", "true", 3, "value", "selection", "rows", "responsive", "onRowSelect", "selectionChange"], ["pTemplate", "caption"], ["pTemplate", "header"], ["pTemplate", "body"], ["pTemplate", "summary"], ["header", "Job Details", "showEffect", "fade", 3, "visible", "focusOnShow", "responsive", "modal", "visibleChange"], ["class", "ui-g ui-fluid", 4, "ngIf"], [1, "ui-dialog-buttonpane", "ui-helper-clearfix"], ["type", "button", "pButton", "", "icon", "pi pi-times", "label", "Delete", 3, "click"], ["type", "button", "pButton", "", "icon", "pi pi-check", "label", "Save", 3, "click"], [3, "pSelectableRow"], [2, "text-align", "left"], ["type", "button", "pButton", "", "icon", "pi pi-refresh", "label", "Refresh", 3, "click"], [1, "ui-g", "ui-fluid"], [1, "ui-g-12"], [1, "ui-g-4"], ["for", "company"], [1, "ui-g-8"], ["pInputText", "", "id", "company", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "jobTitle", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "location", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputTextarea", "", "id", "notes", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "link", "autofocus", "", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Pending", "label", "Pending", "inputId", "opt1", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Rejected", "label", "Rejected", "inputId", "opt2", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "In Progress", "label", "In Progress", "inputId", "opt3", 3, "ngModel", "ngModelChange"]], template: function CompanyListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p-table", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onRowSelect", function CompanyListComponent_Template_p_table_onRowSelect_1_listener($event) { return ctx.onRowSelect($event); })("selectionChange", function CompanyListComponent_Template_p_table_selectionChange_1_listener($event) { return ctx.selectedJob = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CompanyListComponent_ng_template_2_Template, 1, 0, "ng-template", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CompanyListComponent_ng_template_3_Template, 13, 0, "ng-template", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CompanyListComponent_ng_template_4_Template, 13, 7, "ng-template", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CompanyListComponent_ng_template_3_Template, 9, 0, "ng-template", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CompanyListComponent_ng_template_4_Template, 9, 5, "ng-template", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, CompanyListComponent_ng_template_5_Template, 2, 0, "ng-template", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -660,9 +643,8 @@ CompanyListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.jobs)("selection", ctx.selectedJob)("rows", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.jobs)("selection", ctx.selectedJob)("rows", 5)("responsive", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("visible", ctx.displayDialog)("focusOnShow", false)("responsive", true)("modal", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.jobDetail);
@@ -995,7 +977,7 @@ class ProfileComponent {
     }
 }
 ProfileComponent.ɵfac = function ProfileComponent_Factory(t) { return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"])); };
-ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 3, vars: 1, consts: [[1, "page-header", "display-1", 2, "text-align", "center"], [4, "ngIf"], [1, "page-header"], [1, "list-group"], [1, "list-group-item"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
+ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfileComponent, selectors: [["app-profile"]], decls: 3, vars: 1, consts: [[1, "page-header", "display-1", 2, "text-align", "center", "margin-bottom", "60px"], [4, "ngIf"], [1, "page-header"], [1, "list-group"], [1, "list-group-item"]], template: function ProfileComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Profile");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

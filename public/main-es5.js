@@ -837,25 +837,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "th");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Location");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Notes");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Notes");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Status");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Link");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Status");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -891,18 +879,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "td");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "td");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
 
@@ -921,19 +897,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.location);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.notes);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.status);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](job_r14.link);
       }
     }
 
@@ -1221,12 +1189,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    var _c0 = function _c0() {
-      return {
-        width: "400px"
-      };
-    };
-
     var CompanyListComponent = /*#__PURE__*/function () {
       function CompanyListComponent(authservice, flashMessage, jobService) {
         _classCallCheck(this, CompanyListComponent);
@@ -1311,8 +1273,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       type: CompanyListComponent,
       selectors: [["app-company-list"]],
       decls: 12,
-      vars: 11,
-      consts: [[2, "margin-top", "50px"], ["selectionMode", "single", "pagination", "true", 3, "value", "selection", "rows", "onRowSelect", "selectionChange"], ["pTemplate", "caption"], ["pTemplate", "header"], ["pTemplate", "body"], ["pTemplate", "summary"], ["header", "Job Details", "showEffect", "fade", 3, "visible", "focusOnShow", "responsive", "modal", "visibleChange"], ["class", "ui-g ui-fluid", 4, "ngIf"], [1, "ui-dialog-buttonpane", "ui-helper-clearfix"], ["type", "button", "pButton", "", "icon", "pi pi-times", "label", "Delete", 3, "click"], ["type", "button", "pButton", "", "icon", "pi pi-check", "label", "Save", 3, "click"], [3, "pSelectableRow"], [2, "text-align", "left"], ["type", "button", "pButton", "", "icon", "pi pi-refresh", "label", "Refresh", 3, "click"], [1, "ui-g", "ui-fluid"], [1, "ui-g-12"], [1, "ui-g-4"], ["for", "company"], [1, "ui-g-8"], ["pInputText", "", "id", "company", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "jobTitle", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "location", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputTextarea", "", "id", "notes", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "link", "autofocus", "", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Pending", "label", "Pending", "inputId", "opt1", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Rejected", "label", "Rejected", "inputId", "opt2", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "In Progress", "label", "In Progress", "inputId", "opt3", 3, "ngModel", "ngModelChange"]],
+      vars: 9,
+      consts: [[2, "margin-top", "50px"], ["selectionMode", "single", "pagination", "true", 3, "value", "selection", "rows", "responsive", "onRowSelect", "selectionChange"], ["pTemplate", "caption"], ["pTemplate", "header"], ["pTemplate", "body"], ["pTemplate", "summary"], ["header", "Job Details", "showEffect", "fade", 3, "visible", "focusOnShow", "responsive", "modal", "visibleChange"], ["class", "ui-g ui-fluid", 4, "ngIf"], [1, "ui-dialog-buttonpane", "ui-helper-clearfix"], ["type", "button", "pButton", "", "icon", "pi pi-times", "label", "Delete", 3, "click"], ["type", "button", "pButton", "", "icon", "pi pi-check", "label", "Save", 3, "click"], [3, "pSelectableRow"], [2, "text-align", "left"], ["type", "button", "pButton", "", "icon", "pi pi-refresh", "label", "Refresh", 3, "click"], [1, "ui-g", "ui-fluid"], [1, "ui-g-12"], [1, "ui-g-4"], ["for", "company"], [1, "ui-g-8"], ["pInputText", "", "id", "company", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "jobTitle", "autofocus", "", "disabled", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "location", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputTextarea", "", "id", "notes", "autofocus", "", 3, "ngModel", "ngModelChange"], ["pInputText", "", "id", "link", "autofocus", "", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Pending", "label", "Pending", "inputId", "opt1", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "Rejected", "label", "Rejected", "inputId", "opt2", 3, "ngModel", "ngModelChange"], ["name", "group1", "value", "In Progress", "label", "In Progress", "inputId", "opt3", 3, "ngModel", "ngModelChange"]],
       template: function CompanyListComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1327,9 +1289,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CompanyListComponent_ng_template_2_Template, 1, 0, "ng-template", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CompanyListComponent_ng_template_3_Template, 13, 0, "ng-template", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CompanyListComponent_ng_template_3_Template, 9, 0, "ng-template", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CompanyListComponent_ng_template_4_Template, 13, 7, "ng-template", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CompanyListComponent_ng_template_4_Template, 9, 5, "ng-template", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, CompanyListComponent_ng_template_5_Template, 2, 0, "ng-template", 5);
 
@@ -1375,11 +1337,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.jobs)("selection", ctx.selectedJob)("rows", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.jobs)("selection", ctx.selectedJob)("rows", 5)("responsive", true);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c0));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("visible", ctx.displayDialog)("focusOnShow", false)("responsive", true)("modal", true);
 
@@ -2112,7 +2072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-profile"]],
       decls: 3,
       vars: 1,
-      consts: [[1, "page-header", "display-1", 2, "text-align", "center"], [4, "ngIf"], [1, "page-header"], [1, "list-group"], [1, "list-group-item"]],
+      consts: [[1, "page-header", "display-1", 2, "text-align", "center", "margin-bottom", "60px"], [4, "ngIf"], [1, "page-header"], [1, "list-group"], [1, "list-group-item"]],
       template: function ProfileComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 0);
